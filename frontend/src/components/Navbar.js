@@ -1,13 +1,13 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { Link, useLocation } from 'react-router-dom'
+import { useState } from 'react'
 
 const navigation = [
-  { name: 'Home', href: '/', current: false },
-  { name: 'About', href: '/about', current: false },
-  { name: 'Services', href: '/services', current: false },
-  { name: 'Projects', href: '/projects', current: false },
-  { name: 'Contacts', href: '/contacts', current: false },
+  { name: 'Home', href: '#home', current: false },
+  { name: 'About', href: '#about', current: false },
+  { name: 'Services', href: '#services', current: false },
+  { name: 'Projects', href: '#projects', current: false },
+  { name: 'Contacts', href: '#contacts', current: false },
 ]
 
 function classNames(...classes) {
@@ -15,7 +15,20 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
-  const location = useLocation();
+  const [activeSection, setActiveSection] = useState('home');
+
+  const handleNavClick = (href, sectionName) => {
+    setActiveSection(sectionName.toLowerCase());
+    
+    // Smooth scroll to section
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
 
   return (
     <Disclosure as="nav" className="bg-primary sticky top-0 z-50">
@@ -39,17 +52,16 @@ export default function Navbar() {
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
                 {navigation.map((item) => (
-                  <Link
+                  <button
                     key={item.name}
-                    to={item.href}
-                    aria-current={location.pathname === item.href ? 'page' : undefined}
+                    onClick={() => handleNavClick(item.href, item.name)}
                     className={classNames(
-                      location.pathname === item.href ? 'bg-secondary text-white' : 'text-gray-300 hover:bg-primary-light hover:text-white',
-                      'rounded-md px-3 py-2 text-sm font-medium',
+                      activeSection === item.name.toLowerCase() ? 'bg-secondary text-white' : 'text-gray-300 hover:bg-primary-light hover:text-white',
+                      'rounded-md px-3 py-2 text-sm font-medium transition-colors duration-200',
                     )}
                   >
                     {item.name}
-                  </Link>
+                  </button>
                 ))}
               </div>
             </div>
@@ -62,12 +74,11 @@ export default function Navbar() {
           {navigation.map((item) => (
             <DisclosureButton
               key={item.name}
-              as={Link}
-              to={item.href}
-              aria-current={location.pathname === item.href ? 'page' : undefined}
+              as="button"
+              onClick={() => handleNavClick(item.href, item.name)}
               className={classNames(
-                location.pathname === item.href ? 'bg-secondary text-white' : 'text-white hover:bg-primary-light hover:text-white',
-                'block rounded-md px-3 py-2 text-base font-medium',
+                activeSection === item.name.toLowerCase() ? 'bg-secondary text-white' : 'text-white hover:bg-primary-light hover:text-white',
+                'block rounded-md px-3 py-2 text-base font-medium w-full text-left transition-colors duration-200',
               )}
             >
               {item.name}
