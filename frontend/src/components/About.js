@@ -59,7 +59,7 @@ function About() {
             <h4 className='font-bold text-xs sm:text-sm mb-2'>Completed Projects</h4>
             <p className='text-2xl sm:text-3xl font-light'>{yearsOfExperience}+</p>
           </div>
-          <div className='px-4 py-4 bg-secondary text-white rounded-xl text-center sm:col-span-2 lg:col-span-1'>
+          <div className='px-4 py-4 bg-secondary text-white rounded-xl text-center sm:col-span-1 lg:col-span-1'>
             <h4 className='font-bold text-xs sm:text-sm mb-2'>In Progress Projects</h4>
             <p className='text-2xl sm:text-3xl font-light'>{yearsOfExperience}+</p>
           </div>
