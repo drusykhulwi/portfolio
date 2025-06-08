@@ -1,4 +1,5 @@
 import React from 'react'
+import TechStack from './TechStack'
 
 function Services() {
   return (
@@ -45,6 +46,7 @@ function Services() {
           </button>
         </div>
       </div>
+      <TechStack/>
     </div>
   )
 }
