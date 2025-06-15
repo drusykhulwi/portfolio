@@ -48,7 +48,7 @@ function Testimonials() {
                         {reviews.map((items, index) => (
                             <div
                                 key={index} 
-                                className='flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-4 py-6 bg-pink-300 text-gray-800 rounded-xl transition-all duration-300 hover:scale-85'
+                                className='flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-4 py-6 bg-secondary text-gray-800 rounded-xl transition-all duration-300 hover:scale-85'
                             >
                                 <div className='space-y-3'>
                                     <div>
