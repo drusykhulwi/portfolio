@@ -6,12 +6,12 @@ import { faWhatsapp, faLinkedin, faGithub, faFigma } from "@fortawesome/free-bra
 
 
 const socials = [
-    {href: "mailto:drusillakhulwael@gmail.com", icon: {faEnvelope}},
-    {href: "tel:+254701780172", icon: { faPhone } },
-    {href: "https://www.linkedin.com/in/drusillakhulwael/", icon: {faLinkedin}},
-    {href: "https://wa.me/254739224458", icon: {faWhatsapp}},
-    {href: "https://github.com/drusykhulwi", icon: {faGithub}},
-    {href: "https://www.figma.com/@drusykhulwi", icon: {faFigma}},
+    {href: "mailto:drusillakhulwael@gmail.com", icon: faEnvelope},
+    {href: "tel:+254701780172", icon: faPhone  },
+    {href: "https://www.linkedin.com/in/drusillakhulwael/", icon: faLinkedin},
+    {href: "https://wa.me/254739224458", icon: faWhatsapp},
+    {href: "https://github.com/drusykhulwi", icon: faGithub},
+    {href: "https://www.figma.com/@drusykhulwi", icon: faFigma},
 ]
 
 function Socials() {
