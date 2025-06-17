@@ -14,7 +14,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="min-h-[50vh] flex flex-col items-center justify-center gap-8 sm:gap-12 lg:gap-16 px-4 sm:px-6 lg:px-8" id="home">
+    <div className="min-h-[70vh] flex flex-col items-center justify-center gap-8 sm:gap-12 lg:gap-16 px-4 sm:px-6 lg:px-8" id="home">
       <div className="relative w-full max-w-4xl">
         <h1 className='text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center leading-tight'>
           Hello! Welcome to Drusilla's world! <br/> I love <span className='text-secondary'>{likes[currentIndex]}</span>
