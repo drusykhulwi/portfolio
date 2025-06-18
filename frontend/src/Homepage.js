@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar"
 import Projects from "./components/Projects";
 import Services from "./components/Services";
 import Testimonials from "./components/Testimonials";
+import WhatsAppFloat from "./components/WhatsappFloat";
 
 function Homepage() {
   return (
@@ -18,6 +19,11 @@ function Homepage() {
         <Testimonials/>
         <Contacts/>
         <Footer/>
+
+        <WhatsAppFloat
+          phoneNumber="+254739224458" 
+          message="Hi! I saw your website and would like to know more about your services." 
+        />
     </div>
   );
 }
