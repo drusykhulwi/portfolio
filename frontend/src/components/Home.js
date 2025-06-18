@@ -4,6 +4,15 @@ const likes = ['Coca-Cola', 'Coffee', 'Baby-Pink', 'teddy-bears'];
 
 function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  
+  const scrollToProjects = () => {
+    const element = document.getElementById('projects');
+    element?.scrollIntoView({ behavior: 'smooth' });
+  }
+  const scrollToContacts = () => {
+    const element = document.getElementById('contacts')
+    element?.scrollIntoView({ behavior: 'smooth' });
+  }
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -42,10 +51,10 @@ function Home() {
       </div>
       
       <div className='flex sm:flex-row justify-center items-center gap-4 w-full max-w-md'>
-        <button className='w-auto sm:w-auto px-4 py-2 bg-secondary text-white rounded-xl hover:bg-primary-light transition-colors duration-200 text-sm sm:text-base'>
+        <button onClick={scrollToProjects} className='w-auto sm:w-auto px-4 py-2 bg-secondary text-white rounded-xl hover:bg-primary-light transition-colors duration-200 text-sm sm:text-base'>
           View my Projects
         </button>
-        <button className='w-auto sm:w-auto px-4 py-2 bg-secondary text-white rounded-xl hover:bg-primary-light transition-colors duration-200 text-sm sm:text-base'>
+        <button onClick={scrollToContacts} className='w-auto sm:w-auto px-4 py-2 bg-secondary text-white rounded-xl hover:bg-primary-light transition-colors duration-200 text-sm sm:text-base'>
           Work With me
         </button>
       </div>

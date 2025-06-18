@@ -2,6 +2,11 @@ import React from 'react'
 import TechStack from './TechStack'
 
 function Services() {
+  const scrollToProjects = () => {
+    const element = document.getElementById('projects');
+    element?.scrollIntoView({ behavior: 'smooth' });
+  }
+
   return (
     <div className="min-h-[50vh] flex flex-col lg:flex-col items-center justify-center gap-8 sm:gap-12 lg:gap-16 px-4 sm:px-6 lg:px-8 py-8" id="services">
       <h2 className='text-white font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center'>
@@ -16,7 +21,7 @@ function Services() {
             latest technologies. My web development service ensures fast load times, secure coding, and clean, maintainable
             architecture.
           </p>
-          <button className='w-fit px-6 py-3 bg-primary text-white rounded-xl hover:bg-primary-light transition-colors duration-200 text-sm sm:text-base'>
+          <button onClick={scrollToProjects} className='w-fit px-6 py-3 bg-primary text-white rounded-xl hover:bg-primary-light transition-colors duration-200 text-sm sm:text-base'>
             View my Projects
           </button>
         </div>
@@ -29,7 +34,7 @@ function Services() {
             My solutions are built to scale, offering seamless functionality, speed, and intuitive user experiences
             that keep the users engaged.
           </p>
-          <button className='w-fit px-6 py-3 bg-primary text-white rounded-xl hover:bg-primary-light transition-colors duration-200 text-sm sm:text-base'>
+          <button onClick={scrollToProjects} className='w-fit px-6 py-3 bg-primary text-white rounded-xl hover:bg-primary-light transition-colors duration-200 text-sm sm:text-base'>
             View my Projects
           </button>
         </div>
@@ -41,7 +46,7 @@ function Services() {
             I design interfaces that are not only beautiful but also functional. My UI/UX expertise focuses on user
             behavior and accessibility to deliver designs that enhance user engagement and satisfaction across all devices.
           </p>
-          <button className='w-fit px-6 py-3 bg-primary text-white rounded-xl hover:bg-primary-light transition-colors duration-200 text-sm sm:text-base'>
+          <button onClick={scrollToProjects} className='w-fit px-6 py-3 bg-primary text-white rounded-xl hover:bg-primary-light transition-colors duration-200 text-sm sm:text-base'>
             View my Projects
           </button>
         </div>
