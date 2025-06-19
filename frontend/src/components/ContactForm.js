@@ -11,13 +11,14 @@ export default function ContactForm() {
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div className="sm:col-span-3">
               <label htmlFor="first-name" className="block text-sm/6 font-medium text-gray-900">
-                First name
+                First name <span style={{ color: 'red' }}>*</span>
               </label>
               <div className="mt-2">
                 <input
                   id="first-name"
                   name="first-name"
                   type="text"
+                  required
                   autoComplete="given-name"
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-1 focus:-outline-offset-2 focus:outline-primary-light sm:text-sm/6"
                 />
@@ -26,13 +27,14 @@ export default function ContactForm() {
 
             <div className="sm:col-span-3">
               <label htmlFor="last-name" className="block text-sm/6 font-medium text-gray-900">
-                Last name
+                Last name <span style={{ color: 'red' }}>*</span>
               </label>
               <div className="mt-2 mx-2">
                 <input
                   id="last-name"
                   name="last-name"
                   type="text"
+                  required
                   autoComplete="family-name"
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-1 focus:-outline-offset-2 focus:outline-primary-light sm:text-sm/6"
                 />
@@ -41,7 +43,7 @@ export default function ContactForm() {
 
             <div className="sm:col-span-4">
               <label htmlFor="email" className="block text-sm/6 font-medium text-gray-900">
-                Email address
+                Email address <span style={{ color: 'red' }}>*</span>
               </label>
               <div className="mt-2">
                 <input
@@ -49,6 +51,7 @@ export default function ContactForm() {
                   name="email"
                   type="email"
                   autoComplete="email"
+                  required
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-1 focus:-outline-offset-2 focus:outline-primary-light sm:text-sm/6"
                 />
               </div>
@@ -56,7 +59,7 @@ export default function ContactForm() {
 
             <div className="sm:col-span-4">
               <label htmlFor="number" className="block text-sm/6 font-medium text-gray-900">
-                Phone Number
+                Phone Number <span style={{ color: 'red' }}>*</span>
               </label>
               <div className="mt-2">
                 <input
@@ -71,7 +74,7 @@ export default function ContactForm() {
 
             <div className="sm:col-span-4">
               <label htmlFor="message" className="block text-sm/6 font-medium text-gray-900">
-                Message
+                Message <span style={{ color: 'red' }}>*</span>
               </label>
               <div className="mt-2">
                 <textarea
@@ -80,6 +83,7 @@ export default function ContactForm() {
                   rows={5}
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-1 focus:-outline-offset-1 focus:outline-primary-light sm:text-sm/6"
                   defaultValue={''}
+                  required
                 />
               </div>
             </div>
