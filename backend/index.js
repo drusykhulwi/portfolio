@@ -47,3 +47,33 @@ async function getAbout() {
         connection.release;
     }
 }
+
+//Defining a route for the root URL
+app.get('/', (req, res) => {
+    res.send('Welcome to the drusilla API');
+});
+
+//Route to add about
+app.post('/add-about', async (req, res) => {
+    const { name, bio, profileImage, cvURL } = req.body;
+    try {
+        const results = await addAbout(name, bio, profileImage, cvURL);
+        res.json({ message: 'About added', results });
+    } catch(error) {
+        res.status(500).json({ error: 'Failed to add about' });
+    }
+});
+
+//Route to get the about
+app.get('/about', async (req, res) => {
+    try {
+        const results = await getAbout();
+        res.json(results);
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to fetch reviews' })
+    }
+});
+
+app.listen(3001, () => {
+    console.log('Server is running on port 3001');
+})
